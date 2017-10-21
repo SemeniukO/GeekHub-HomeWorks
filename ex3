@@ -10,16 +10,10 @@
 		i++;
 		}
 	
-	function sortarr(a,b){
-		return a-b;
-		}
-
-	arr.sort(sortarr);
-	
 	//creating object
 	i=0;
 	while(i<=100000){
-		obj[i] = ''+i;
+		obj['qwerty' + i] = i;
 		//alert(obj[i]);
 		i++;
 		}
@@ -46,8 +40,8 @@ function benchArr(f,arr) {
   return new Date() - date;
 }
 
-document.write( 'arr - for...in: ' + benchArr(arrForIn,arr) + 'мс' + '<br \/> ' + 'arr - for (...;...;...) {...}: ' + benchArr(arrFor,arr) + 'мс <br \/> <br \/>' );
-document.write( 'obj - for...in: ' + benchArr(arrForIn,obj) + 'мс' + '<br \/> ' + 'arr - for (...;...;...) {...}: ' + benchArr(arrFor,obj) + 'мс <br \/> <br \/>' );
-document.write( 'objRandom - for...in: ' + benchArr(arrForIn,obj2) + 'мс' + '<br \/> ' + 'arr - for (...;...;...) {...}: ' + benchArr(arrFor,obj2) + 'мс' );
+document.write( 'arr - for...in: ' + benchArr(arrForIn,arr) + 'мс' + '<br \/> ' + 'arr - for (...;...;...) {...}: ' + benchArr(arrFor,arr) + 'мс <br/><br/>' );
+document.write( 'objRandom - for...in: ' + benchArr(arrForIn,obj2) + 'мс' + '<br \/> ' + 'arr - for (...;...;...) {...}: ' + benchArr(arrFor,obj2) + 'мс <br/><br/>' );
+document.write( 'obj - for...in: ' + benchArr(arrForIn,obj) + 'мс' + '<br \/> ' + 'arr - for (...;...;...) {...}: ' + benchArr(arrFor,obj) + 'мс <br/><br/>' );
 
 </script>
