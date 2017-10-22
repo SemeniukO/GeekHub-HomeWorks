@@ -5,27 +5,13 @@
 	var i = 0;
 	
 	//creating array
-	while(arr.length!=100000){
+	while(i!=100000){
 		arr[i] = ''+(Math.round(Math.random()*100000));
-		i++;
-		}
-	
-	//creating object
-	i=0;
-	while(i<=100000){
 		obj['qwerty' + i] = i;
-		//alert(obj[i]);
-		i++;
-		}
-	
-	//creating object2
-	i=0;
-	while(i<=100000){
 		obj2[i] = ''+(Math.round(Math.random()*10000));
-		//alert(obj[i]);
 		i++;
 		}
-	
+
 function arrForIn(arr) {
   for (var key in arr) arr[key]++;
 }
