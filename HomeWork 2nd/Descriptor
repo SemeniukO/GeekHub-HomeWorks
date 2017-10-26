@@ -1,0 +1,47 @@
+<script>
+	// find domain from address
+	var nameDomain = {
+		domain:'',
+	};
+
+	Object.defineProperty(nameDomain, "address", {
+		set: function(value) {
+     	 if (value.indexOf('http')==0){
+     	 var split = value.split('/');
+     	 this.domain = split[2];
+     			} else {this.domain = 'your address has to start from "http"'}
+    		}
+	});
+
+	nameDomain.address = prompt('Write an address','http://learn.javascript.ru/js-misc');
+	alert('domain is: ' + nameDomain.domain);
+
+//__________________________________________________________________________________________
+
+	// amount days in the year
+	var days = {
+		amount:365,
+	};
+
+	Object.defineProperty(days, "amount", {
+		writable:false 
+	})
+
+	days.amount = 300;
+	alert('days.amount didn\'t change. Still - ' + days.amount);
+
+//__________________________________________________________________________________________
+
+	//check what date it is today
+	var date = {
+		day: new Date,
+		str: 'today is ',
+		get now(){
+			return this.str + " " + this.day
+		} 
+	
+	};
+
+	alert(date.now);
+
+</script>
