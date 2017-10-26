@@ -1,0 +1,53 @@
+<script>
+// check when the function was used
+var lasttime = {};
+
+	function seeLastTime(func) {
+  		return function() { 
+  			lasttime.time = new Date();
+   			return func.apply(this, arguments);
+  		}
+	}
+
+function sum(a,b) {
+	return a*b;
+}
+
+sum = seeLastTime(sum);
+
+sum(2,2);
+
+alert(lasttime.time);
+
+//_______________________________________________________
+// you can set how many times the function can be called
+
+var amount = {};
+	function checkAmount(func,count,num) {
+  		return function() {
+  			if (!amount[count])	{
+  				amount[count] = 0;
+  			}
+  			if (amount[count] !=num){
+  				amount[count]++;
+  				return func.apply(this, arguments);
+  			} 
+  			else alert('You can\'t use that function anymore');
+  		}   		
+  	}
+
+
+function str(a,b) {
+	return a*b;
+}
+
+str = checkAmount(str,'check',3);
+
+alert(str(2,2));
+alert(str(2,3));
+alert(str(2,4));
+alert(str(2,5));
+
+alert('function was used '+amount.check+' times');
+
+</script>
