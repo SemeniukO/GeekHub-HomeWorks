@@ -1,0 +1,34 @@
+<script>
+
+	var user = {
+		student:'Kevin',
+		surname:'Fox',
+		age:18,
+		parents: {
+    		father: 'John',
+		    mother: 'Angelina',
+  			},
+  		enrollment: new Date(2013,08,01),
+  		graduateFrom: new Date(2018,06,25),
+  		fullName: function (){
+  			return this.student+' '+this.surname;
+  			}, 
+  		fullAge: function (){										 
+  			return this.age + this.graduateFrom.getFullYear()-this.enrollment.getFullYear();
+  			},
+		toString: function (){
+			return 'Student: '+this.fullName()+'\nParents: '+this.parents.father+' and '+this.parents.mother+' '+this.surname;
+			},
+		valueOf: function (){
+			return new Date().getFullYear() -this.enrollment.getFullYear();
+			}
+		};
+
+	var str = JSON.stringify(user, ['student', 'surname', 'enrollment']);
+
+	alert('Student: '+user.fullName()+' will be '+user.fullAge()+' years old when he graduate from the University'); 
+	alert (String(user)); // String(obj)
+	alert ('Student '+user.student+' '+user.surname+' has been studying for '+Number(user)+ ' years'); // Number(obj)
+	alert(str); // JSON.stringify(obj)
+
+</script>
