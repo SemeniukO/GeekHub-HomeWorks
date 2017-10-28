@@ -4,9 +4,9 @@
 		student:'Kevin',
 		surname:'Fox',
 		age:18,
-		parents: {
-    		father: 'John',
-		    mother: 'Angelina',
+		parents:{
+    			father: 'John',
+			mother: 'Angelina',
   			},
   		enrollment: new Date(2013,08,01),
   		graduateFrom: new Date(2018,06,25),
