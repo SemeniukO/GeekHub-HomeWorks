@@ -21,14 +21,15 @@
 			},
 		valueOf: function (){
 			return new Date().getFullYear() -this.enrollment.getFullYear();
+			},
+			toJSON: function(){
+				return this.student + this.surname + this.enrollment;
 			}
 		};
-
-	var str = JSON.stringify(user, ['student', 'surname', 'enrollment']);
 
 	alert('Student: '+user.fullName()+' will be '+user.fullAge()+' years old when he graduate from the University'); 
 	alert (String(user)); // String(obj)
 	alert ('Student '+user.student+' '+user.surname+' has been studying for '+Number(user)+ ' years'); // Number(obj)
-	alert(str); // JSON.stringify(obj)
-
-</script>
+	alert(JSON.stringify(user)); // JSON.stringify(obj)
+	
+</script>	
