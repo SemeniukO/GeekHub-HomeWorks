@@ -21,8 +21,8 @@ function check(user){
 
 check(user);
 
-alert(user.surname);
+console.log(user.surname);
 
 user.surname = 1231;
 
-alert(user.surname);
+console.log(user.surname);
