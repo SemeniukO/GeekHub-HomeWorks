@@ -14,7 +14,7 @@ function check(user){
     	},
     	set: function(value) {
       	    surname = value;
-      	    console.log('The property student  was changed');
+      	    console.log('The property surname  was changed');
     	}
     });
 }
