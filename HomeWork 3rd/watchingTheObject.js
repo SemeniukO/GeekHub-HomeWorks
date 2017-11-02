@@ -1,25 +1,34 @@
-user = {
-    student:'Kevin',
-    surname:'Fox',
-    age:18,
-    sad:32,
+var user = {
+	name:'user',
+	student:'Kevin',
+	surname:'Fox',
+	age:18
+    }
+
+
+function watchingTheObjec(user){
+   var name =user.name; 
+   var obj = {};
+   for (var key in user){
+	obj[key] = user[key];
+	
+	function setTheProp(key){
+	   Object.defineProperty(user, key, {
+	      get: function() {
+	         console.log('The property .'+key+' of object "'+name+'" was called');
+    		 return obj[key];
+    	      },
+    	      set: function(value) {
+      	         obj[key] = value;
+      		 console.log('The property .'+ key+' was changed');
+    	      }
+  	   });
+	}
+     setTheProp(key);
+   }
 }
 
-function check(user){
-    var surname = user.surname;
-    Object.defineProperty(user, 'surname', {
-	get: function() {
-	    console.log('The property surname  was called');
-	    return surname;
-    	},
-    	set: function(value) {
-      	    surname = value;
-      	    console.log('The property surname  was changed');
-    	}
-    });
-}
-
-check(user);
+watchingTheObjec(user);
 
 console.log(user.surname);
 
