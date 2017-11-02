@@ -7,7 +7,7 @@ var user = {
 
 
 function watchingTheObjec(user){
-   var name =user.name; 
+   var name = user.name || 'The object name wasn"t set';
    var obj = {};
    for (var key in user){
 	obj[key] = user[key];
