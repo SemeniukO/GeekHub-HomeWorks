@@ -15,12 +15,12 @@ function watchingTheObjec(user){
 	function setTheProp(i){
 	   Object.defineProperty(user, i, {
 	      get: function() {
-	         console.log('The property .'+i+' of object "'+name+'" was called');
+	         console.log('The property (.'+i+') of object ('+name+') was called');
     		 return obj[i];
     	      },
     	      set: function(value) {
       	         obj[i] = value;
-      		 console.log('The property .'+i+' of object "'+name+'" was changed');
+      		 console.log('The property (.'+i+') of object ('+name+') was changed');
     	      }
   	   });
 	}
