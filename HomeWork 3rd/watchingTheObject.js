@@ -11,7 +11,7 @@ function watchingTheObjec(user){
    for (var key in user){
       obj[key] = user[key];
 	
-      function setTheProp(i){
+      (function (i){
          Object.defineProperty(user, i, {
             get: function() {
                console.log('The property (.'+i+') of object ('+name+') was called');
@@ -22,7 +22,7 @@ function watchingTheObjec(user){
       	       console.log('The property (.'+i+') of object ('+name+') was changed');
     	    }
          });
-     }setTheProp(key);
+     })(key);
    }
 }
 
