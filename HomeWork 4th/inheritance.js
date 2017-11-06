@@ -39,7 +39,7 @@ function Hunter(value, name){
 	this.enable();
 	this.name = name;
 	console.log(name+' is a hunter');
-  this.hasWeapon = false;
+        this.hasWeapon = false;
 	this.weapon = function(){
 		this.hasWeapon = true;
 	};
