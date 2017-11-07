@@ -1,4 +1,4 @@
-function Move(value){
+function Animal (){
 	this._move = false;
 	var self = this;
 
@@ -11,72 +11,68 @@ function Move(value){
 	}
 }   
 
-function Creature(value){
-	Move.apply(this, arguments);
-
-	var parentEnable = this.enable;
-	this.enable = function(){
-		parentEnable(); 
-		this.run();
-	}
-
-	this.run = function(){
-		if (value == 'Mouse') {
-			console.log('The Mouse is running');
-		}
-		if (value == 'Eagle') {
-			console.log('The Eagle is flying');
-		}
-		if (value == 'Human') {
-			console.log('The Human is walking');
-		}
-
-	}
+function Mouse(){
+	Animal.apply(this, arguments);
+	this.func = function(){
+			console.log(this._move);
+		    }
 }
 
-function Hunter(value, name){
-	Creature.apply(this, arguments);
-	this.enable();
-	this.name = name;
-	console.log(name+' is a hunter');
-        this.hasWeapon = false;
-	this.weapon = function(){
-		this.hasWeapon = true;
-	};
-	this.checkWeapon = function(){
-		if (this.hasWeapon == true){
-		   console.log('Hunter '+name+' has a weapon');
-		}else{
-		   console.log('Hunter '+name+' doesn\'t have a weapon');	
-		}
-	}
+function Eagle(){
+	Animal.apply(this, arguments);
+	this.func = function(){
+			console.log(this._move);
+		    }
 }
 
-function Aborigine(value, name){
-	Creature.apply(this, arguments);
-	this.enable();
-	this.name = name;
-	console.log('Human name is '+name);
-	this.canSpeak = false;
-	this.checkSpeaking = function(){
-		if (this.canSpeak == false){
-			console.log(name+' is a Aborigine');
-		} else {
-			console.log(name+' has learned to speak');
-		}
-	}
-	this.speak = function(){
-		this.canSpeak = true;
-	}
+function Deer(){
+	Animal.apply(this, arguments);
+	this.func = function(){
+			console.log(this._move);
+		    }
 }
 
-var eagle = new Creature('Eagle');
-eagle.enable();
+function Human(){
+	Animal.apply(this, arguments);
+	this.func = function(){
+			console.log(this._move);
+		    }
+}
 
-var hunter = new Hunter('Human','Marty');
-hunter.weapon();
+function Hunter(){
+	Human.apply(this, arguments);
+	this.doSomething = function(){
+				console.log('do something');
+			   }
+}
 
-var aborigine = new Aborigine('Human','Colin');
-aborigine.checkSpeaking();
-aborigine.speak();
-aborigine.checkSpeaking();
+function Aborigine(){
+	Human.apply(this, arguments);
+	this.doSomething = function(){
+				console.log('do something');
+			   }
+}
+
+var mouse = new Mouse();
+mouse.enable();
+mouse.func();
+
+var eagle = new Eagle();
+eagle.func();
+
+var deer = new Deer();
+deer.enable();
+deer.func();
+
+var human = new Human();
+human.enable();
+human.func();
+
+var hunter = new Hunter();
+hunter.enable();
+hunter.func();
+hunter.doSomething();
+
+var aborigine = new Aborigine();
+aborigine.func();
+aborigine.doSomething();
