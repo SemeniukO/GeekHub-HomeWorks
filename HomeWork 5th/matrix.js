@@ -4,35 +4,35 @@ while(arr.length!=20){
 	arr[i] = [];
 	var j=0;
 	while(j!=20){
-		arr[i][j] = randomInteger()
+		arr[i][j] = fillArray()
 		j++;
 	}
 	i++;
 }
 
-function randomInteger() {
-    var rand = Math.round(Math.random()*10);
-    if (rand>=1){return '.'};
-    if (rand<1){return '*'};
+function fillArray() {
+	var rand = Math.round(Math.random()*10);
+	if (rand>=1){return '.'};
+	if (rand<1){return '*'};
   }
 
-function randomStand() {
-    var rand = Math.floor(Math.random()*20);
-    return rand;
+function putAnimal() {
+	var rand = Math.floor(Math.random()*20);
+	return rand;
   }
 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
+function getInteger(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-var fir = randomStand();
-var sec = randomStand();
+var fir = putAnimal();
+var sec = putAnimal();
 arr[fir][sec] = '@';
 
 console.log('The animal stands here arr['+fir+']['+sec+']');
 
 function stepX(){
-	fir+= getRndInteger(-1, 1);
+	fir+= getInteger(-1, 1);
 	if ((fir<-1) || (fir>20)){
 		return stepX();
 	}
@@ -40,7 +40,7 @@ function stepX(){
 }
 
 function stepY(){
-	sec+= getRndInteger(-1, 1);
+	sec+= getInteger(-1, 1);
 	if ((sec<-1) || (sec>20)){
 		return stepX();
 	}
