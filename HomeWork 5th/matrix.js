@@ -98,6 +98,7 @@ function htmlWrite(){
   		outPut += '</br>';
   	}
 	document.write(outPut);
+	document.querySelector('html').style.fontFamily = "monospace"
   	outPut = '';
 }
 
