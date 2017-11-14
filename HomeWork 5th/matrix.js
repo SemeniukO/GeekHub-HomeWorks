@@ -72,7 +72,6 @@ function move(){
 			console.log('The tree is front of. The animal is thinking where to go');
 			fir = lastX;
 			sec = lastY;
-			setTimeout(function(){},3000);
 			return;
 	} 
 } 
