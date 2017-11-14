@@ -96,9 +96,9 @@ function htmlWrite(){
     				outPut += arr[i][j] + " ";
   			}
   		outPut += '</br>';
-  		document.write(outPut);
-  		outPut = '';
-	}
+  	}
+	document.write(outPut);
+  	outPut = '';
 }
 
  //clearInterval(timerId);
