@@ -43,7 +43,7 @@ function stepX(){
 function stepY(){
 	sec+= getInteger(-1, 1);
 	if ((sec<-1) || (sec>20)){
-		return stepX();
+		return stepY();
 	}
 	return sec;
 }
