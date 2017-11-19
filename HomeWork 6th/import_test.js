@@ -1,4 +1,3 @@
-import Animal from './Animal.js';
 import {Mouse}  from './Mouse.js';
 import {Eagle} from './Eagle.js';
 import {Deer} from './Deer.js';
