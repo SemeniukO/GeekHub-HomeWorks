@@ -1,9 +1,6 @@
 import {Mouse}  from './Mouse.js';
 import {Eagle} from './Eagle.js';
-import {Deer} from './Deer.js';
-import {Human} from './Human.js';
 import Hunter from './Hunter.js';
-import Aborigine from './Aborigine.js';
 
 let mouse = new Mouse();
 mouse.enable();
