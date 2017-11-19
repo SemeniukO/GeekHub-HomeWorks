@@ -1,4 +1,3 @@
-import Animal from './Animal.js';
 import {Human}  from './Human.js';
 export default class Aborigine extends Human {
 	func() {
