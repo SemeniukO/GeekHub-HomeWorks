@@ -1,6 +1,6 @@
 import Animal from './Animal.js';
 export class Eagle extends Animal {
-		func() {
+	func() {
 		console.log(this._move);
 	}
 }
