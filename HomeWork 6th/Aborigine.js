@@ -5,6 +5,6 @@ export default class Aborigine extends Human {
 		console.log(this._move);
 	}
 	doSomething () {
-	console.log('do something');
+		console.log('do something');
 	}
 }
