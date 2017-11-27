@@ -1,0 +1,24 @@
+<script>
+class Aminal{
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  move() {
+    console.log(`${this.name} is moving`);
+  }
+}
+
+let weakMap = new WeakMap();
+let animalProxy = new Proxy(Aminal, {
+  construct: function(target, argumentsList) {
+    weakMap.set(target, argumentsList);
+    return new target(...argumentsList);
+  }
+});
+
+let deer = new animalProxy('Deer', 12);
+console.log(weakMap.get(Aminal));
+deer.move(); 
+
+</script>
