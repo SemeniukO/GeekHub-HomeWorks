@@ -16,8 +16,8 @@ for (let num of matrix) {
 
 function fillArray() {
     var rand = Math.round(Math.random()*10);
-    if (rand>=1){return `<span class='empty'>. </span>`};
-    if (rand<1){return `<span class='tree' >. </span>`};
+    if (rand>=1){return `<span class='empty'>&nbsp; </span>`};
+    if (rand<1){return `<span class='tree' >&nbsp; </span>`};
   }
 
 function putAnimal() {
@@ -31,7 +31,7 @@ function getInteger(min, max) {
 
 var fir = putAnimal();
 var sec = putAnimal();
-arr[fir][sec] = `<span class='animal'>. </span>`;
+arr[fir][sec] = `<span class='animal'>&nbsp; </span>`;
 htmlWrite();
 
 console.log('The animal stands here arr['+fir+']['+sec+']');
@@ -69,22 +69,22 @@ function move(){
 		return;
 	}
 	
-	if (arr[x][y] == `<span class='empty'>. </span>`){ 
-		arr[x][y] = `<span class='animal'>. </span>`;
-		arr[lastX][lastY] = `<span class='color'>. </span>`;
+	if (arr[x][y] == `<span class='empty'>&nbsp; </span>`){ 
+		arr[x][y] = `<span class='animal'>&nbsp; </span>`;
+		arr[lastX][lastY] = `<span class='color'>&nbsp; </span>`;
 		console.log('The animal is here right now arr['+x+']['+y+']');
 		htmlWrite();
 		document.close();
-		arr[lastX][lastY] = `<span class='empty'>. </span>`;
+		arr[lastX][lastY] = `<span class='empty'>&nbsp; </span>`;
         return;
 		}
 		else { 
 			clearInterval(timerId);
 			console.log('The tree is front of. The animal is thinking where to go');
-			arr[x][y] = `<span class='treeColor'>. </span>`;
+			arr[x][y] = `<span class='treeColor'>&nbsp; </span>`;
 			htmlWrite();
 			document.close();
-			arr[x][y] = `<span class='tree'>. </span>`;
+			arr[x][y] = `<span class='tree'>&nbsp; </span>`;
 			fir = lastX;
 			sec = lastY;
 			setTimeout(function(){timerId = setInterval(move,1000)},5000);
