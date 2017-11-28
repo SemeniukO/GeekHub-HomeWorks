@@ -12,13 +12,15 @@ class Aminal{
 let weakMap = new WeakMap();
 let animalProxy = new Proxy(Aminal, {
   construct: function(target, argumentsList) {
-    weakMap.set(target, argumentsList);
-    return new target(...argumentsList);
+   let instance = new target(...argumentsList);
+    weakMap.set(instance, argumentsList);
+    return instance;
   }
 });
 
 let deer = new animalProxy('Deer', 12);
-console.log(weakMap.get(Aminal));
+let deer2 = new animalProxy('Mouse', 5);
+console.log(weakMap.get(deer2));
 deer.move(); 
 
 </script>
