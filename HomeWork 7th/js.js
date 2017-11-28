@@ -1,27 +1,45 @@
-let matrix = [];
-let i = 0;
-while(matrix.length!=20){
-	matrix[i] = i;
-	i++;
+let matrix = {
+    Size: 20,
 }
 
 let arr = [];
 
-for (let num of matrix) {
-  	arr[num] = [];
-	for (let key of matrix){
-		arr[num][key] = fillArray();
-	}
+matrix[Symbol.iterator] = function(){
+	let x = this.Size;
+    	let i = 0;
+   	return {
+    	next() {
+      		if (i < x) {
+        		arr[i] = [];
+        		let y = 0;
+        		while(y!=x){
+        			arr[i][y] = fillArray();
+        			y++;
+        		}
+        		return {
+          			done: false,
+          			value: i++
+        		};
+    		} else {
+        		return {
+          		done: true
+        		};
+      		}
+  	}
+  }
 }
 
+for (let num of matrix);
+
 function fillArray() {
-    var rand = Math.round(Math.random()*10);
-    if (rand>=1){return `<span class='empty'>&nbsp; </span>`};
-    if (rand<1){return `<span class='tree' >&nbsp; </span>`};
-  }
+    let rand = Math.round(Math.random()*10);
+    let className = 'empty';
+    if (rand < 1) className = 'tree';
+    return `<span class=${className}>&nbsp; </span>`;
+}
 
 function putAnimal() {
-    var rand = Math.floor(Math.random()*20);
+    let rand = Math.floor(Math.random()*20);
     return rand;
   }
 
@@ -29,9 +47,14 @@ function getInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-var fir = putAnimal();
-var sec = putAnimal();
-arr[fir][sec] = `<span class='animal'>&nbsp; </span>`;
+let fir = putAnimal();
+let sec = putAnimal();
+
+let createAnimal = function setAnimal(){
+	if (arr[fir][sec] == `<span class=treeColor>&nbsp; </span>`){return setAnimal()}
+	arr[fir][sec] = `<span class=animal>&nbsp; </span>`;
+}
+createAnimal();
 htmlWrite();
 
 console.log('The animal stands here arr['+fir+']['+sec+']');
@@ -53,10 +76,10 @@ function stepY(){
 }
 
 function move(){
-	var lastX = fir;
-	var lastY = sec;
-	var x = stepX();
-	var y = stepY()
+	let lastX = fir;
+	let lastY = sec;
+	let x = stepX();
+	let y = stepY()
 	
 	if ((x==lastX)&&(y==lastY)){return move()}
 	
@@ -68,23 +91,23 @@ function move(){
 		sec = lastY;
 		return;
 	}
-	
-	if (arr[x][y] == `<span class='empty'>&nbsp; </span>`){ 
-		arr[x][y] = `<span class='animal'>&nbsp; </span>`;
-		arr[lastX][lastY] = `<span class='color'>&nbsp; </span>`;
+					
+	if (arr[x][y] == `<span class=empty>&nbsp; </span>`){ 
+		arr[x][y] = `<span class=animal>&nbsp; </span>`;
+		arr[lastX][lastY] = `<span class=color>&nbsp; </span>`;
 		console.log('The animal is here right now arr['+x+']['+y+']');
 		htmlWrite();
 		document.close();
-		arr[lastX][lastY] = `<span class='empty'>&nbsp; </span>`;
+		arr[lastX][lastY] = `<span class=empty>&nbsp; </span>`;
         return;
 		}
 		else { 
 			clearInterval(timerId);
 			console.log('The tree is front of. The animal is thinking where to go');
-			arr[x][y] = `<span class='treeColor'>&nbsp; </span>`;
+			arr[x][y] = `<span class=treeColor>&nbsp; </span>`;
 			htmlWrite();
 			document.close();
-			arr[x][y] = `<span class='tree'>&nbsp; </span>`;
+			arr[x][y] = `<span class=tree>&nbsp; </span>`;
 			fir = lastX;
 			sec = lastY;
 			setTimeout(function(){timerId = setInterval(move,1000)},5000);
@@ -93,15 +116,15 @@ function move(){
 	} 
 } 
 
-var timerId = setInterval(move,1000);
+let timerId = setInterval(move,1000);
 
 
 function htmlWrite(){
-var outPut = "";
-var length = arr.length;
-for (var i = 0; i < length; i++) {
-  var l = arr[i].length;
-  for (var j = 0; j < l; j++) {
+let outPut = "";
+let length = arr.length;
+for (let i = 0; i < length; i++) {
+  let l = arr[i].length;
+  for (let j = 0; j < l; j++) {
     outPut += arr[i][j] + " ";
   }
   outPut += '</br>';
