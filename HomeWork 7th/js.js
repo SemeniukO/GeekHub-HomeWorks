@@ -51,7 +51,7 @@ let fir = putAnimal();
 let sec = putAnimal();
 
 let createAnimal = function setAnimal(){
-	if (arr[fir][sec] == `<span class=treeColor>&nbsp; </span>`){return setAnimal()}
+	if (arr[fir][sec] == `<span class=tree>&nbsp; </span>`){return setAnimal()}
 	arr[fir][sec] = `<span class=animal>&nbsp; </span>`;
 }
 createAnimal();
