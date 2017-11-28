@@ -12,7 +12,7 @@ matrix[Symbol.iterator] = function(){
       		if (i < x) {
         		arr[i] = [];
         		let y = 0;
-        		while(y!=x){
+        		while(y < x){
         			arr[i][y] = fillArray();
         			y++;
         		}
