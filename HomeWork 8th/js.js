@@ -353,7 +353,7 @@ let mouseMovment = function moveMouse(){
 	let mouseClass = document.querySelector('.mouse');
 	
 	if (mouseD!=0){
-		if (moveNumber%3 == 0){
+		if (mouseD%3 == 0){
 			mouseClass.style.backgroundSize = '0% 0%';
 			clearInterval(timerIdMouse);
 		}
