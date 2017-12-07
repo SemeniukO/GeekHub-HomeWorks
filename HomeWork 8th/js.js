@@ -172,14 +172,15 @@ let deerMovment = function move(){
 	if ((x==lastX)&&(y==lastY)){
 		fir = lastX;
 		sec = lastY;
-		move();
+		return;
 	};
 	
 	if ((x==-1)||(x==20)||(y==-1)||(y==20)&&(parseInt(deerHealth.style.width,10)>0)){
 		console.log('This is the fence. The animal can\'t go beyond the fence');
 		fir = lastX;
 		sec = lastY;
-		move();
+		move(); 
+		return;
 		};
 
 	if (htmlMatrix[x][y].className == `empty`){ 
@@ -394,36 +395,14 @@ let mouseMovment = function moveMouse(){
 		console.log('The tree is front of. The mouse is moving to another way['+x+']['+y+']');
 		firmouse = lastX;
 		secmouse = lastY;
-		mouseSatiety.innerHTML = (parseInt(mouseSatiety.style.width,10)-5)+'%';
-		mouseSatiety.style.width =  (parseInt(mouseSatiety.style.width,10)-5)+'%';
-		if (mouseSatiety.style.width=='0%'){
-			mouseSatiety.innerHTML = '0%';
-			if ((parseInt(mouseHealth.style.width,10)>0)){
-				mouseHealth.innerHTML = (parseInt(mouseHealth.style.width,10)-10)+'%';
-				mouseHealth.style.width =  (parseInt(mouseHealth.style.width,10)-10)+'%';
-			}else{
-			mouseD++;
-			return;
-			}
-		}
+		mouseMovment();
 		return;
 	}
 	if (htmlMatrix[x][y].className == `bush`){
 		console.log('The bush is front of. The mouse is moving to another way['+x+']['+y+']');
 		firmouse = lastX;
 		secmouse = lastY;
-		mouseSatiety.innerHTML = (parseInt(mouseSatiety.style.width,10)-5)+'%';
-		mouseSatiety.style.width =  (parseInt(mouseSatiety.style.width,10)-5)+'%';
-		if (mouseSatiety.style.width=='0%'){
-			mouseSatiety.innerHTML = '0%';
-			if ((parseInt(mouseHealth.style.width,10)>0)){
-				mouseHealth.innerHTML = (parseInt(mouseHealth.style.width,10)-10)+'%';
-				mouseHealth.style.width =  (parseInt(mouseHealth.style.width,10)-10)+'%';
-			}else{
-			mouseD++;
-			return;
-			}
-		}
+		mouseMovment();
 		return;
 	}
 	if ((htmlMatrix[x][y].className == `fruit`)&&(parseInt(mouseHealth.style.width,10)>0)){
@@ -726,4 +705,3 @@ document.querySelector('html').style.fontFamily = "monospace"
 
  //clearInterval(timerId);
  //clearInterval(timerIdMouse);
-
