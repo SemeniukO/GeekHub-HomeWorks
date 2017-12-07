@@ -159,7 +159,7 @@ let deerMovment = function move(){
 	berryDown();
 
 	if (animalD!=0){
-		if (moveNumber%3 == 0){
+		if (animalD%3 == 0){
 			animalClass.style.backgroundSize = '0% 0%';
 		}
 	}
@@ -354,7 +354,7 @@ let mouseMovment = function moveMouse(){
 	
 	if (mouseD!=0){
 		if (mouseD%3 == 0){
-			mouseClass.style.backgroundSize = '0% 0%';
+			mouseClass.className = 'empty'
 			clearInterval(timerIdMouse);
 		}
 	}
