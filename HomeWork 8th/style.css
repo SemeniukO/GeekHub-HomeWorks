@@ -14,21 +14,25 @@
     height: 20px;
     background-color: #33cc33;
     font-size: 15px;
+    transition: width 0.5s;
     }
     #deerBarH {
     height: 20px;
     background-color: #4dc3ff;
     font-size: 15px;
+    transition: width 0.5s;
     }
     #mouseBarS {
     height: 20px;
     background-color: #33cc33;
     font-size: 15px;
+    transition: width 0.5s;
     }
     #mouseBarH {
     height: 20px;
     background-color: #4dc3ff;
     font-size: 15px;
+    transition: width 0.5s;
     }
     .text{
       font-size: 20px;
