@@ -5,5 +5,6 @@ amountHunter = 1;
 amountTree = 7;
 amountBush = 7;
 matrixSize = 20;
-speed = 500;
+speed = 1000;
+export const bSize = '80% 80%';
 

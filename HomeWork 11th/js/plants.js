@@ -42,7 +42,7 @@ export class Plant {
             this.classGrow(this.treeClass, 55);
         }
         if (this.moveNumber == 2) {
-            this.classGrow(this.bushClass, 80)
+            this.classGrow(this.bushClass, 80);
             this.classGrow(this.treeClass, 80);
         }
 
@@ -118,7 +118,7 @@ export class Plant {
 
     fruitDown(fruit, tree, leaf) {
         let fruitDownStep = 0;
-        let DownStep = 0;
+        let downStep = 0;
         let fruits = fruit;
         let fruitClass;
         return function () {
@@ -129,39 +129,28 @@ export class Plant {
             }
             let leafClass = document.querySelectorAll('.' + leaf);
 
-            DownStep++;
+            downStep++;
             if (leafClass[0] != undefined) {
-                if (DownStep == 4) {
+                if (downStep == 4) {
                     for (let w = 0; w < leafClass.length; w++) {
                         leafClass[w].className = tree;
                     }
-                    DownStep = 0;
+                    downStep = 0;
                 }
             }
 
             if (fruitClass[0] != undefined) {
 
-                if (fruitDownStep == 0) {
-                    this.classGrow(fruitClass, 75);
-                    fruitDownStep++;
-                    return;
-                }
-                if (fruitDownStep == 1) {
-                    this.classGrow(fruitClass, 70);
-                    fruitDownStep++;
-                    return;
-                }
-                if (fruitDownStep == 2) {
-                    this.classGrow(fruitClass, 65);
-                    fruitDownStep++;
-                    return;
-                }
                 if (fruitDownStep == 3) {
                     for (let w = 0; w < fruitClass.length; w++) {
                         fruitClass[w].className = leaf;
                     }
                     fruitDownStep = 0;
-                    DownStep = 0;
+                    downStep = 0;
+                    return;
+                } else {
+                    this.classGrow(fruitClass, (75 - 5*fruitDownStep));
+                    fruitDownStep++;
                     return;
                 }
             }
