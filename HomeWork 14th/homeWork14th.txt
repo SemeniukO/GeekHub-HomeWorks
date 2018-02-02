@@ -1,0 +1,80 @@
+$ git init
+$ git pull https://github.com/SemeniukO/git.git
+$ git status
+$ git add .
+$ git commit -m 'first commit master'
+$ git push
+
+$ git checkout -b branch_a
+$ git checkout -b branch_b
+$ git checkout -b branch_c
+
+$ git checkout branch_a
+$ git add .
+$ git commit -m 'first commit branch_a'
+$ git push origin branch_a
+
+$ git checkout branch_b
+$ git add .
+$ git commit -m 'first commit branch_b'
+$ git push origin branch_b
+
+$ git checkout branch_c
+$ git add .
+$ git commit -m 'first commit branch_c'
+$ git push origin branch_c
+
+$ git checkout master
+$ git add .
+$ git commit -m 'start'
+$ git push https://github.com/SemeniukO/git.git
+
+$ git checkout branch_b
+$ git merge branch_a
+$ git add .
+$ git commit -m 'merge a to b'
+$ git push origin branch_b
+
+$ git checkout branch_c
+$ git merge master
+$ git add .
+$ git commit -m 'merge master to c'
+$ git push origin branch_c
+
+$ git branch -D branch_a
+$ git push origin --delete branch_a
+$ git add .
+$ git commit -m 'delete branch_a'
+$ git push origin branch_c
+
+$ git checkout branch_b
+$ git add.
+$ git commit -m 'change in branch_b'
+$ git push origin branch_b
+
+$ git checkout master
+$ git add .
+$ git commit -m 'change in master'
+$ git push
+
+$ git checkout branch_b
+$ git merge branch_c
+$ git add .
+$ git commit -m 'merge c to b'
+$ git push origin branch_b
+
+$ git branch -d branch_c
+$ git push origin --delete branch_c
+
+$ git checkout master
+$ git merge branch_b
+$ git add .
+$ git commit -m 'merge b to master'
+$ git push
+
+$ git branch -d branch_b
+$ git push origin --delete branch_b
+
+$ git add .
+$ git commit -m 'finish'
+$ git push
