@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Work 15th</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+<h2>Check your mobile operator</h2>
+    <form id="operator" action="/check" class="fieldBordder" method="post">
+        <fieldset>
+            <p>
+                <input type="text" id='phone' name="phone" placeholder="example: 0679770044">
+            </p>
+            <button onclick="test()">Check</button>
+            <p>
+            <button formaction="showAll" formmethod="get" onclick="test('get')">show all operators</button>
+            </p>
+        </fieldset>
+    </form>
+</div>
+<div class="left" id="result"></div>
+
+<script src="./js/main.js"></script>
+</body>
+</html>
