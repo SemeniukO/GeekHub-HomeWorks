@@ -1,11 +1,12 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: './public/js/main.js',
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'public/js/')
+        path: path.resolve(__dirname, './dist'),
+        filename: 'index_bundle.js'
     },
     module: {
         rules: [
@@ -19,6 +20,10 @@ module.exports = {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, './public/index.html'),
+            filename: 'index.html'
+        }),
         new ExtractTextPlugin("styles.css"),
     ]
 };

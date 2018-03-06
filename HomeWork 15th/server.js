@@ -2,7 +2,7 @@ var express = require('express');
 var server = express();
 var bodyParser = require('body-parser');
 
-server.use(express.static('public'));
+server.use(express.static('dist'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended:false}));
 

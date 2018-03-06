@@ -1,0 +1,12 @@
+.fieldBordder{
+    width: 300px;
+    position: absolute;
+}
+.left{
+    margin-left: 310px;
+    float: left;
+}
+#hello{
+    visibility: hidden;
+
+}
