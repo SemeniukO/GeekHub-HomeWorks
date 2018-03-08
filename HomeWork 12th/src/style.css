@@ -1,0 +1,42 @@
+form {
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+}
+input[type=checkbox],input[type=radio]{
+    width: 25px;
+    height: 25px;
+}
+
+.checkBoxEmpty {
+    background: url("../img/Checkbox-Empty-icon.png") no-repeat;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+.checkBoxFull {
+    background: url("../img/Checkbox-Full-icon.png") no-repeat;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+
+.radioEmpty {
+    background: url("../img/radio-button-off-icon.png") no-repeat;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+.radioFull {
+    background: url("../img/radio-button-on-icon.png") no-repeat;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
