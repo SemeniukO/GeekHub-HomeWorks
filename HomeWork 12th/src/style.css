@@ -22,6 +22,7 @@ input[type=checkbox],input[type=radio]{
     width: 32px;
     height: 32px;
     display: inline-block;
+    animation: loading 0.5s;
 }
 
 
@@ -39,4 +40,15 @@ input[type=checkbox],input[type=radio]{
     width: 32px;
     height: 32px;
     display: inline-block;
+    animation: loading 0.5s;
+}
+
+@keyframes loading {
+    0% {
+        transform:scale(1.5);
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
