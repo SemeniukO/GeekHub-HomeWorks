@@ -1,0 +1,82 @@
+.none{
+  display: none;
+}
+body {
+  padding-top: 10px;
+  width: 700px;
+  margin: auto;
+}
+
+p {
+  margin: 0 0 5px;
+}
+
+.test-input {
+  margin: 0 5px 5px 0;
+}
+.add {
+  margin: 0 5px 5px 0;
+  width: 300px;
+  border: 1px dashed rgba(0, 89, 181, 0.82);
+  padding: 5px;
+}
+.add__author, .add__text, .add__btn, .add__checkrule, .dateToDo {
+  display: block;
+  margin: 0 0 5px 0;
+  padding: 5px;
+  width: 94%;
+  border: 1px solid rgba(0, 89, 181, 0.82);
+}
+.checkB{
+  display: block;
+  margin: 0 0 5px 0;
+  width: 94%;
+}
+textarea{
+  height: 50px;
+  min-height: 50px;
+  resize: vertical;
+}
+.add__checkrule {
+  border: none;
+  font-size: 12px;
+}
+.add__btn {
+  margin-top: 15px;
+  box-sizing: content-box;
+  color: #FFF;
+  text-transform: uppercase;
+  background: #007DDC;
+}
+.add__btn:disabled {
+  background: #CCC;
+  color: #999;
+}
+
+.list{
+float:right;
+  width: 350px;
+
+}
+.AddToDoButton{
+  margin-bottom: 5px;
+}
+label{
+  margin-right: 4px;
+}
+.listItem{
+  margin-bottom: 5px;
+  border: 1px solid rgba(0, 89, 181, 0.82);
+  padding: 5px;
+}
+.textList{
+  color: #007DDC;
+}
+.description{
+  margin-top: 5px;
+}
+
+.buttons{
+  margin-right: 5px;
+  margin-top: 5px;
+}
