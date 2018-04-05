@@ -3,14 +3,7 @@ import {connect} from "react-redux";
 
 class Ticket extends React.Component {
     componentDidMount(){
-        function findTodo(todo) {
-            return todo._id === this.props.ownProps.match.params.id;
-        }
-
-        let ticket = this.props.tikets.find(findTodo.bind(this));
-        if (ticket===undefined) {
-
-
+        if (this.props.tikets.length===0) {
             let url = window.location.href;
             url = url.slice(url.lastIndexOf("/") + 1);
             fetch('/ticket', {
@@ -26,15 +19,15 @@ class Ticket extends React.Component {
             })
         }
     }
-    render() {
 
+    render() {
         function findTodo(todo) {
             return todo._id === this.props.ownProps.match.params.id;
         }
 
         let ticket = this.props.tikets.find(findTodo.bind(this));
         if (ticket===undefined) {
-            return(<div>This ticket wasn't found</div>)
+            return(<div>Please wait...</div>)
         }
         return (
             <div className='listItem'>
