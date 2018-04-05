@@ -1,8 +1,3 @@
-function getDate() {
-    let date = new Date();
-    return date = date.getDate() + "." + Number(date.getMonth() + 1) + "." + date.getFullYear();
-}
-
 export default function toDoList(state = [], action) {
 
     if (action.type === 'ADD_TODO') {

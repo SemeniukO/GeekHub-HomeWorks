@@ -72,8 +72,25 @@ server.post('/edit-ticket', (req, res) => {
     });
 });
 
+server.get('/ticket/*', function(req, res) {
+    res.sendFile( __dirname + "/build/" + "index.html" );
+});
+
+server.post('/ticket', function(req, res) {
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        let dbo = db.db("mydb");
+        let myquery = {_id: ObjectID(req.body._id)};
+        dbo.collection("customers").find(myquery).toArray(function(err, result) {
+            if (err) throw err;
+            res.send(result[0]);
+            db.close();
+        });
+    });
+});
+
+
 server.post('/del-ticket',(req, res) => {
-    console.log(req.body)
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         let dbo = db.db("mydb");

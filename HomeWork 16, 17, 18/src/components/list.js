@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import { Link } from 'react-router-dom';
 
 export class List extends React.Component {
 
@@ -62,6 +63,7 @@ export class List extends React.Component {
                         return <div className='listItem'key={title._id}>
                             <div>
                                 <div  style={{display:title.showAll}}>{<a href='/' onClick={this.onBtnClickHandler.bind(this,title._id)}>{title.title}</a>}
+                                <button style={{float:'right'}} > <Link to={`ticket/${title._id}`}>Link</Link></button>
                                 <div style={{display:title.show}} className='description'><p ><span className='textList'>description:</span> {title.description}</p>
                                 <p ><span className='textList'>status:</span> {title.status}</p>
                                 <p ><span className='textList'>date:</span> {title.date}</p>

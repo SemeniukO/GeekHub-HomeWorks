@@ -65,6 +65,7 @@ label{
   margin-right: 4px;
 }
 .listItem{
+  width: 350px;
   margin-bottom: 5px;
   border: 1px solid rgba(0, 89, 181, 0.82);
   padding: 5px;
@@ -79,4 +80,7 @@ label{
 .buttons{
   margin-right: 5px;
   margin-top: 5px;
+}
+a:visited {
+  color: #0000EE;
 }

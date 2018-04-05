@@ -25,7 +25,6 @@ class AddToDo extends React.Component {
             },
             body: JSON.stringify(this.ticket)
         }).then((res) =>{
-            //console.log(res.text())
             return res.json();
         }).then((res)=>{this.props.addId(res)});
 
@@ -63,10 +62,6 @@ class AddToDo extends React.Component {
     render() {
         return (
             <div>
-
-
-
-
                 <div style={{position: 'absolute'}}>
                     <button style={{marginRight:'5px'}}onClick={this.loadBase.bind(this)}>Show List</button>
                     <button className='AddToDoButton' onClick={this.showForm.bind(this)}>Add toDoList</button>
@@ -104,9 +99,10 @@ class AddToDo extends React.Component {
 }
 
 export default connect(
-    state => ({
+    (state,ownProps) => ({
         show: state.show[0],
-        disableButton:state.disableButton[0]
+        disableButton:state.disableButton[0],
+        ownProps
     }),
     dispatch => ({
         onAddTrack: (toDo) => {
