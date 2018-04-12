@@ -3,6 +3,19 @@ import React from "react";
 import List from "./components/list"
 
 class AddToDo extends React.Component {
+    componentDidMount() {
+        if (this.props.tikets.length === 0){
+            fetch('/load-list')
+                .then((res) => {
+                    return res.json();
+                }).then((res) => {
+                    for (let i = 0; i < res.length; i++) {
+                        this.props.onAddTrack(res[i])
+                    }
+                }
+            )
+        }
+    }
     onBtnClickHandler(e) {
         e.preventDefault();
         this.getDate();
@@ -49,22 +62,12 @@ class AddToDo extends React.Component {
         this.props.disableButtonAction(false);
         }else this.props.disableButtonAction(true);
     }
-    loadBase() {
-        fetch('/load-list')
-            .then((res) => {
-                return res.json();
-            }).then((res)=>{
-                for(let i=0;i<res.length;i++){
-                    this.props.onAddTrack(res[i])}
-                }
-            )
-    }
+
     render() {
         return (
             <div>
                 <div style={{position: 'absolute'}}>
-                    <button style={{marginRight:'5px'}}onClick={this.loadBase.bind(this)}>Show List</button>
-                    <button className='AddToDoButton' onClick={this.showForm.bind(this)}>Add toDoList</button>
+                   <button className='AddToDoButton' onClick={this.showForm.bind(this)}>Add toDoList</button>
                     <form className={this.props.show}>
                         <input
                             type='text'
@@ -102,6 +105,7 @@ export default connect(
     (state,ownProps) => ({
         show: state.show[0],
         disableButton:state.disableButton[0],
+        tikets: state.toDoList,
         ownProps
     }),
     dispatch => ({
