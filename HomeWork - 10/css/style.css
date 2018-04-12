@@ -1,0 +1,205 @@
+body {
+    font-size: 35px;
+}
+
+.floatRight {
+    float: right;
+    margin-right: 15%;
+}
+
+.deerProgress {
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.text {
+    font-size: 20px;
+}
+
+.deer {
+    background: url('../pic/Deer-icon.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 90% 90%;
+}
+
+.mouse {
+    background: url('../pic/Mouse.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 90% 90%;
+}
+
+.leafTree {
+    text-align: center;
+    background: url('../pic/treePlant.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.leafBush {
+    text-align: center;
+    background: url('../pic/bushPlant.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.tree {
+    text-align: center;
+    background: url('../pic/tree-icon.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 40% 40%;
+    transition: background-size 0.2s;
+}
+
+.tree1 {
+    text-align: center;
+    background: url('../pic/tree-icon1.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.tree2 {
+    text-align: center;
+    background: url('../pic/tree-icon2.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.tree3 {
+    text-align: center;
+    background: url('../pic/tree-icon3.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.fruit {
+    text-align: center;
+    background: url('../pic/fruit.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.fruit1 {
+    text-align: center;
+    background: url('../pic/fruit1.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.fruit2 {
+    text-align: center;
+    background: url('../pic/fruit2.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.fruit3 {
+    text-align: center;
+    background: url('../pic/fruit3.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.fruit4 {
+    text-align: center;
+    background: url('../pic/fruit4.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.fruit5 {
+    text-align: center;
+    background: url('../pic/fruit5.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.berry {
+    text-align: center;
+    background: url('../pic/berry.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.berry1 {
+    text-align: center;
+    background: url('../pic/berry1.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.berry2 {
+    text-align: center;
+    background: url('../pic/berry2.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.berry3 {
+    text-align: center;
+    background: url('../pic/berry3.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+.bush {
+    text-align: center;
+    background: url('../pic/bush-icon.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 40% 40%;
+    transition: background-size 0.2s;
+}
+
+.bushHalf {
+    text-align: center;
+    background: url('../pic/bush-icon1.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 90% 90%;
+}
+
+.empty {
+    border: 1px solid black;
+}
+
+.color {
+    background-color: pink;
+    border: 1px solid black;
+    animation-name: example;
+    animation-duration: 3s;
+}
+
+.treeColor {
+    background: url('../pic/tree-icon.png') no-repeat;
+    border: 1px solid black;
+    background-position: center;
+    background-size: 80% 80%;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 10s;
+}
+
+@-webkit-keyframes example {
+    to {
+        background-color: white;
+    }
+}
